@@ -88,6 +88,14 @@ body {
   pointer-events: none; /* Prevent hover/click while dimmed */
 }
 
+/* Responsive image size for mobile devices */
+@media (max-width: 768px) {
+  .product-card img {
+    width: 80%;
+    height: auto;
+  }
+}
+
 .product-card img {
   max-width: 100%;
   height: auto;
