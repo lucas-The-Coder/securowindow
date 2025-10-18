@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | SecuroWindow</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E2CD82', // gold accent
+            dark: '#1C1C20',    // dark background
+            light: '#E7E7E7',   // light text
+          },
+        },
+      },
+    }
+  </script>
   <style>
     body {
       background-color: #1C1C20; /* Dark background */
@@ -49,7 +62,7 @@
   <!-- Hero Section -->
   <section class="bg-dark text-light py-16 text-center fade-up">
     <h1 class="text-4xl font-bold text-primary">Our Work Gallery</h1>
-    <p class="mt-4 text-lg">See how we’ve secured homes & businesses</p>
+    <p class="mt-4 text-lg text-primary/80">See how we’ve secured homes & businesses</p>
   </section>
 
   <!-- Gallery Main -->
