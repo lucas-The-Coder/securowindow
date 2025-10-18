@@ -8,11 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: '#E2CD82', dark: '#1C1C20', light: '#E7E7E7' },
-        },
-      },
+      theme: { extend: { colors: { primary: '#E2CD82', dark: '#1C1C20', light: '#E7E7E7' } } }
     }
   </script>
 
@@ -20,11 +16,13 @@
     body { background-color: #1C1C20; color: #E7E7E7; font-family: 'Inter', sans-serif; }
     .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .card { @apply bg-dark/90 border border-primary/30 rounded-2xl p-6 shadow-lg; }
+    .card { @apply bg-dark/80 border border-primary/40 rounded-2xl p-6 shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl; }
+    .section-title { @apply text-primary text-2xl font-bold mb-6; }
   </style>
 </head>
 <body class="font-sans">
 
+  <!-- Header -->
   <header class="bg-dark/95 backdrop-blur-sm border-b border-primary sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
@@ -40,25 +38,28 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="bg-dark text-light py-16 text-center fade-up">
     <h1 class="text-4xl font-bold text-primary">What Our Customers Say</h1>
   </section>
 
+  <!-- Testimonials -->
   <main class="container mx-auto py-12 px-6 grid md:grid-cols-2 gap-6 fade-up">
-    <blockquote class="card">
-      <p class="text-light/80">“Add Text Here...”</p>
-      <footer class="mt-4 text-sm text-light/60">— Add Text Here...</footer>
-    </blockquote>
-    <blockquote class="card">
-      <p class="text-light/80">“Add Text Here...”</p>
-      <footer class="mt-4 text-sm text-light/60">— Add Text Here...</footer>
-    </blockquote>
-    <blockquote class="card">
-      <p class="text-light/80">“Add Text Here...”</p>
-      <footer class="mt-4 text-sm text-light/60">— Add Text Here...</footer>
-    </blockquote>
+    <div class="card">
+      <p>“Professional and reliable service, highly recommend!”</p>
+      <footer class="mt-4 text-sm text-light/70">— John D.</footer>
+    </div>
+    <div class="card">
+      <p>“My windows have never felt safer. Great workmanship!”</p>
+      <footer class="mt-4 text-sm text-light/70">— Sarah K.</footer>
+    </div>
+    <div class="card">
+      <p>“Excellent customer service and attention to detail.”</p>
+      <footer class="mt-4 text-sm text-light/70">— Peter L.</footer>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
     <div class="container mx-auto text-center">
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
@@ -71,5 +72,6 @@
     }, { threshold: 0.2 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>

@@ -12,9 +12,9 @@
       theme: {
         extend: {
           colors: {
-            primary: '#E2CD82', // Gold accent
-            dark: '#1C1C20',    // Dark background
-            light: '#E7E7E7',   // Light text / highlights
+            primary: '#E2CD82',
+            dark: '#1C1C20',
+            light: '#E7E7E7',
           },
         },
       },
@@ -22,50 +22,20 @@
   </script>
 
   <style>
-    body {
-      background-color: #1C1C20;
-      color: #E7E7E7;
-      font-family: 'Inter', sans-serif;
-    }
+    body { background-color: #1C1C20; color: #E7E7E7; font-family: 'Inter', sans-serif; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .card { @apply bg-dark/80 border border-primary/40 rounded-2xl p-6 shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl; }
 
-    .section-title {
-      @apply text-primary text-2xl font-bold mb-6;
-    }
+    .btn-primary { @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition; }
+    .section-title { @apply text-primary text-2xl font-bold mb-6; }
 
-    .card {
-      @apply bg-dark/90 border border-primary/30 rounded-xl p-6 shadow-lg;
-    }
-
-    table {
-      @apply w-full border-collapse;
-    }
-    th, td {
-      @apply border border-primary p-4 text-light text-left;
-    }
-    thead {
-      @apply bg-dark/70 text-primary;
-    }
-
-    /* Comparison highlights */
-    .securowindow {
-      @apply text-primary font-semibold;
-    }
-    .table-category {
-      @apply bg-dark/80 text-primary font-semibold text-lg;
-    }
-    .table-row:hover {
-      @apply bg-dark/70;
-    }
+    table { @apply w-full border-collapse text-light; }
+    th, td { @apply border border-primary p-3; }
+    thead { @apply bg-dark/70 text-primary; }
+    tbody tr:nth-child(even) { @apply bg-dark/80; }
+    tbody tr:hover { @apply bg-dark/70; }
   </style>
 </head>
 <body class="font-sans">
@@ -94,95 +64,64 @@
 
   <!-- Main Content -->
   <main class="container mx-auto py-12 px-6">
-
     <!-- Advantages -->
     <h2 class="section-title">Our Advantages</h2>
     <ul class="grid md:grid-cols-2 gap-6">
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">10+ Years of Experience</h3>
-          <p class="text-light/80 mt-1">We’ve been securing homes and businesses for over a decade, building trust and reliability.</p>
-        </div>
-      </li>
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">Certified & Insured Installers</h3>
-          <p class="text-light/80 mt-1">Our team is fully certified and insured to provide safe and professional installation services.</p>
-        </div>
-      </li>
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">Rust-Resistant, High-Quality Steel</h3>
-          <p class="text-light/80 mt-1">We use premium steel materials that ensure durability and protection for years to come.</p>
-        </div>
-      </li>
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">Warranty & Satisfaction Guarantee</h3>
-          <p class="text-light/80 mt-1">We stand behind our products and services with a full warranty and guarantee of satisfaction.</p>
-        </div>
-      </li>
+      <li class="card fade-up">✔ Over 10 years of industry experience</li>
+      <li class="card fade-up">✔ Certified and insured installers</li>
+      <li class="card fade-up">✔ Rust-resistant, high-quality steel</li>
+      <li class="card fade-up">✔ Warranty & satisfaction guarantee</li>
     </ul>
 
     <!-- Comparison -->
     <h2 class="section-title mt-12 mb-6">Comparison</h2>
     <div class="overflow-x-auto fade-up">
-      <table class="min-w-full">
+      <table>
         <thead>
           <tr>
+            <th>Category</th>
             <th>Feature</th>
             <th>SecuroWindow</th>
             <th>Others</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="table-category">
-            <td colspan="3">Durability & Materials</td>
-          </tr>
-          <tr class="table-row">
+          <tr>
+            <td rowspan="2">Durability</td>
             <td>Steel Quality</td>
-            <td class="securowindow">High-grade, rust-resistant</td>
+            <td>High-grade, rust-resistant</td>
             <td>Standard steel</td>
           </tr>
-          <tr class="table-row">
-            <td>Lifespan</td>
-            <td class="securowindow">20+ years</td>
+          <tr>
+            <td>Life Expectancy</td>
+            <td>20+ years</td>
             <td>5–10 years</td>
           </tr>
-          <tr class="table-category">
-            <td colspan="3">Customization & Design</td>
-          </tr>
-          <tr class="table-row">
-            <td>Colors & Styles</td>
-            <td class="securowindow">Full color & design options</td>
+          <tr>
+            <td rowspan="2">Customization</td>
+            <td>Design Options</td>
+            <td>Full color & style choices</td>
             <td>Limited</td>
           </tr>
-          <tr class="table-row">
-            <td>Custom Fit</td>
-            <td class="securowindow">Tailored to your windows</td>
-            <td>Standard sizes only</td>
+          <tr>
+            <td>Fit & Measurements</td>
+            <td>Custom-fit for every window</td>
+            <td>Generic sizes</td>
           </tr>
-          <tr class="table-category">
-            <td colspan="3">Support & Warranty</td>
-          </tr>
-          <tr class="table-row">
+          <tr>
+            <td rowspan="2">Support & Warranty</td>
             <td>Warranty</td>
-            <td class="securowindow">Yes, full coverage</td>
+            <td>Yes</td>
             <td>No</td>
           </tr>
-          <tr class="table-row">
-            <td>Installation Support</td>
-            <td class="securowindow">Professional installers available</td>
-            <td>Limited or DIY</td>
+          <tr>
+            <td>Customer Support</td>
+            <td>Dedicated assistance</td>
+            <td>Limited support</td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </main>
 
   <!-- Footer -->
@@ -192,7 +131,7 @@
     </div>
   </footer>
 
-  <!-- Fade-up Scroll Animation -->
+  <!-- Fade-up Animation -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
