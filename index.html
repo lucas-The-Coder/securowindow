@@ -21,9 +21,6 @@
     }
   </script>
 
-  <!-- Motion One for scroll animations -->
-  <script src="https://cdn.jsdelivr.net/npm/@motionone/dom/dist/motion-one.umd.min.js"></script>
-
   <style>
     body {
       background-color: #1C1C20;
@@ -45,13 +42,31 @@
       @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition;
     }
 
+    /* Card style for features, gallery, testimonials */
     .card {
-      @apply bg-dark/80 border border-primary/40 rounded-2xl p-8 shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl;
+      @apply bg-dark/80 border border-primary rounded-2xl p-8 shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl;
+    }
+
+    .card img {
+      @apply rounded-xl mb-4 shadow-lg;
+    }
+
+    .card-title {
+      @apply text-xl font-semibold text-primary mb-2;
+    }
+
+    .card-text {
+      @apply text-light/80;
+    }
+
+    .adv-check {
+      @apply text-primary font-bold mr-2;
     }
   </style>
 </head>
 
-<body class="font-sans bg-dark text-light">
+<body class="font-sans">
+
   <!-- Header -->
   <header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
     <div class="container mx-auto flex justify-between items-center p-4">
@@ -69,7 +84,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="bg-primary text-dark py-24 text-center">
+  <section class="bg-primary text-dark py-24 text-center fade-up">
     <h1 class="text-5xl font-extrabold fade-up">Add Text Here...</h1>
     <p class="mt-6 text-lg fade-up">Add Text Here...</p>
     <a href="products.html" class="inline-block mt-8 btn-primary fade-up">View Products</a>
@@ -80,16 +95,16 @@
     <h2 class="text-3xl font-bold mb-12 fade-up text-primary">Why Choose SecuroWindow?</h2>
     <div class="grid md:grid-cols-3 gap-8">
       <div class="card fade-up">
-        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
-        <p class="mt-4 text-light/80">Add Text Here...</p>
+        <h3 class="card-title">Add Text Here...</h3>
+        <p class="card-text">Add Text Here...</p>
       </div>
       <div class="card fade-up">
-        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
-        <p class="mt-4 text-light/80">Add Text Here...</p>
+        <h3 class="card-title">Add Text Here...</h3>
+        <p class="card-text">Add Text Here...</p>
       </div>
       <div class="card fade-up">
-        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
-        <p class="mt-4 text-light/80">Add Text Here...</p>
+        <h3 class="card-title">Add Text Here...</h3>
+        <p class="card-text">Add Text Here...</p>
       </div>
     </div>
   </section>
@@ -99,9 +114,9 @@
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-8 fade-up text-primary">See Our Work</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="card fade-up"><img src="images/gallery1.jpg" alt="Gallery 1" class="w-full rounded-xl"></div>
-        <div class="card fade-up"><img src="images/gallery2.jpg" alt="Gallery 2" class="w-full rounded-xl"></div>
-        <div class="card fade-up"><img src="images/gallery3.jpg" alt="Gallery 3" class="w-full rounded-xl"></div>
+        <div class="card fade-up"><img src="images/gallery1.jpg" alt="Gallery 1"></div>
+        <div class="card fade-up"><img src="images/gallery2.jpg" alt="Gallery 2"></div>
+        <div class="card fade-up"><img src="images/gallery3.jpg" alt="Gallery 3"></div>
       </div>
       <a href="gallery.html" class="inline-block mt-10 btn-primary fade-up">View Full Gallery</a>
     </div>
@@ -149,5 +164,6 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
