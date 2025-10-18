@@ -42,16 +42,13 @@
       @apply text-primary text-2xl font-bold mb-6;
     }
 
-    .card {
+    /* Unified card style for advantages, comparisons, testimonials */
+    .card, .comparison-card {
       @apply bg-dark/80 border border-primary rounded-xl p-6 shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl;
     }
 
     .comparison-grid {
       @apply grid md:grid-cols-3 gap-6;
-    }
-
-    .comparison-card {
-      @apply bg-dark/80 border border-primary rounded-xl p-4 text-center shadow-lg;
     }
 
     .comparison-feature {
@@ -64,6 +61,11 @@
 
     .comparison-check {
       @apply text-primary text-xl font-bold;
+    }
+
+    /* Advantages checkmarks */
+    .adv-check {
+      @apply text-primary font-bold mr-2;
     }
   </style>
 </head>
@@ -91,21 +93,19 @@
     <p class="mt-4 text-lg">Trusted, certified, and committed to your safety</p>
   </section>
 
-  <!-- Main Content -->
+  <!-- Our Advantages -->
   <main class="container mx-auto py-12 px-6">
     <h2 class="section-title">Our Advantages</h2>
     <ul class="grid md:grid-cols-2 gap-6">
-      <li class="card">✔ Over 10 years of industry experience</li>
-      <li class="card">✔ Certified and insured installers</li>
-      <li class="card">✔ Rust-resistant, high-quality steel</li>
-      <li class="card">✔ Warranty & satisfaction guarantee</li>
+      <li class="card fade-up"><span class="adv-check">✔</span>Over 10 years of industry experience</li>
+      <li class="card fade-up"><span class="adv-check">✔</span>Certified and insured installers</li>
+      <li class="card fade-up"><span class="adv-check">✔</span>Rust-resistant, high-quality steel</li>
+      <li class="card fade-up"><span class="adv-check">✔</span>Warranty & satisfaction guarantee</li>
     </ul>
 
+    <!-- Comparison Section -->
     <h2 class="section-title mt-12 mb-6">Comparison</h2>
-    
-    <!-- Comparison Cards Grid -->
     <div class="comparison-grid">
-      <!-- Feature Name -->
       <div class="comparison-card fade-up">
         <div class="comparison-feature">Durability</div>
       </div>
@@ -152,7 +152,6 @@
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 </body>
