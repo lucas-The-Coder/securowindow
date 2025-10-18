@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Why Choose Us | SecuroWindow</title>
 
-  <!-- Tailwind CDN with SecuroWindow dark theme -->
+  <!-- Tailwind CDN + Custom Colors -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#E2CD82', // Gold accent
-            dark: '#1C1C20',    // Dark background
-            light: '#E7E7E7',   // Light text / highlights
+            primary: '#E2CD82', // gold
+            dark: '#1C1C20',    // charcoal
+            light: '#E7E7E7',   // light gray
           },
         },
       },
@@ -28,6 +28,7 @@
       font-family: 'Inter', sans-serif;
     }
 
+    /* Fade-up animation */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -38,33 +39,28 @@
       transform: translateY(0);
     }
 
-    .section-title {
-      @apply text-primary text-2xl font-bold mb-6;
+    /* Headings */
+    h1, h2, h3 {
+      text-align: center;
     }
 
+    /* Buttons */
+    .btn-primary {
+      @apply font-semibold px-6 py-3 rounded-2xl shadow transition;
+      border-width: 2px;
+    }
+    .btn-gold {
+      @apply bg-primary text-dark border-dark hover:opacity-90;
+    }
+    .btn-dark {
+      @apply bg-dark text-primary border-primary hover:opacity-90;
+    }
+
+    /* Cards */
     .card {
-      @apply bg-dark/90 border border-primary/30 rounded-xl p-6 shadow-lg;
-    }
-
-    table {
-      @apply w-full border-collapse;
-    }
-    th, td {
-      @apply border border-primary p-4 text-light text-left;
-    }
-    thead {
-      @apply bg-dark/70 text-primary;
-    }
-
-    /* Comparison highlights */
-    .securowindow {
-      @apply text-primary font-semibold;
-    }
-    .table-category {
-      @apply bg-dark/80 text-primary font-semibold text-lg;
-    }
-    .table-row:hover {
-      @apply bg-dark/70;
+      @apply p-6 rounded-2xl shadow-lg text-center;
+      border-width: 2px;
+      border-color: #E2CD82;
     }
   </style>
 </head>
@@ -86,103 +82,65 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-dark text-light py-16 text-center fade-up">
+  <!-- Hero -->
+  <section class="bg-dark text-light py-16 fade-up">
     <h1 class="text-4xl font-bold text-primary">Why Choose Us</h1>
     <p class="mt-4 text-lg">Trusted, certified, and committed to your safety</p>
   </section>
 
-  <!-- Main Content -->
+  <!-- Advantages -->
   <main class="container mx-auto py-12 px-6">
-
-    <!-- Advantages -->
-    <h2 class="section-title">Our Advantages</h2>
-    <ul class="grid md:grid-cols-2 gap-6">
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">10+ Years of Experience</h3>
-          <p class="text-light/80 mt-1">We’ve been securing homes and businesses for over a decade, building trust and reliability.</p>
-        </div>
-      </li>
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">Certified & Insured Installers</h3>
-          <p class="text-light/80 mt-1">Our team is fully certified and insured to provide safe and professional installation services.</p>
-        </div>
-      </li>
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">Rust-Resistant, High-Quality Steel</h3>
-          <p class="text-light/80 mt-1">We use premium steel materials that ensure durability and protection for years to come.</p>
-        </div>
-      </li>
-      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
-        <span class="text-primary text-2xl mt-1">✔</span>
-        <div>
-          <h3 class="font-semibold text-lg">Warranty & Satisfaction Guarantee</h3>
-          <p class="text-light/80 mt-1">We stand behind our products and services with a full warranty and guarantee of satisfaction.</p>
-        </div>
-      </li>
-    </ul>
-
-    <!-- Comparison -->
-    <h2 class="section-title mt-12 mb-6">Comparison</h2>
-    <div class="overflow-x-auto fade-up">
-      <table class="min-w-full">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>SecuroWindow</th>
-            <th>Others</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-category">
-            <td colspan="3">Durability & Materials</td>
-          </tr>
-          <tr class="table-row">
-            <td>Steel Quality</td>
-            <td class="securowindow">High-grade, rust-resistant</td>
-            <td>Standard steel</td>
-          </tr>
-          <tr class="table-row">
-            <td>Lifespan</td>
-            <td class="securowindow">20+ years</td>
-            <td>5–10 years</td>
-          </tr>
-          <tr class="table-category">
-            <td colspan="3">Customization & Design</td>
-          </tr>
-          <tr class="table-row">
-            <td>Colors & Styles</td>
-            <td class="securowindow">Full color & design options</td>
-            <td>Limited</td>
-          </tr>
-          <tr class="table-row">
-            <td>Custom Fit</td>
-            <td class="securowindow">Tailored to your windows</td>
-            <td>Standard sizes only</td>
-          </tr>
-          <tr class="table-category">
-            <td colspan="3">Support & Warranty</td>
-          </tr>
-          <tr class="table-row">
-            <td>Warranty</td>
-            <td class="securowindow">Yes, full coverage</td>
-            <td>No</td>
-          </tr>
-          <tr class="table-row">
-            <td>Installation Support</td>
-            <td class="securowindow">Professional installers available</td>
-            <td>Limited or DIY</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2 class="text-3xl font-bold mb-12 text-primary fade-up">Our Advantages</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card fade-up border-primary">
+        ✔ Over 10 years of industry experience
+      </div>
+      <div class="card fade-up border-primary">
+        ✔ Certified and insured installers
+      </div>
+      <div class="card fade-up border-primary">
+        ✔ Rust-resistant, high-quality steel
+      </div>
+      <div class="card fade-up border-primary">
+        ✔ Warranty & satisfaction guarantee
+      </div>
     </div>
 
+    <!-- Comparison -->
+    <h2 class="text-3xl font-bold mt-16 mb-8 text-primary fade-up">Comparison</h2>
+    <div class="grid gap-6">
+      <!-- Header Row -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="card font-bold border-primary fade-up">Feature</div>
+        <div class="card font-bold border-primary fade-up">SecuroWindow</div>
+        <div class="card font-bold border-primary fade-up">Others</div>
+      </div>
+
+      <!-- Durability Row -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="card border-primary fade-up">Durability</div>
+        <div class="card border-primary fade-up">20+ years</div>
+        <div class="card border-primary fade-up">5–10 years</div>
+      </div>
+
+      <!-- Customization Row -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="card border-primary fade-up">Customization</div>
+        <div class="card border-primary fade-up">Full color & design options</div>
+        <div class="card border-primary fade-up">Limited</div>
+      </div>
+
+      <!-- Warranty Row -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="card border-primary fade-up">Warranty</div>
+        <div class="card border-primary fade-up">✔ Yes</div>
+        <div class="card border-primary fade-up">✖ No</div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 fade-up">
+      <a href="contact.html" class="btn-primary btn-gold fade-up">Request Consultation</a>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -192,7 +150,7 @@
     </div>
   </footer>
 
-  <!-- Fade-up Scroll Animation -->
+  <!-- Scroll Animation -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
