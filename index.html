@@ -4,9 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SecuroWindow | Secure Your Home</title>
+
+  <!-- Tailwind CDN + Custom Colors -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E2CD82', // gold
+            dark: '#1C1C20',    // charcoal
+            light: '#E7E7E7',   // light gray
+          },
+        },
+      },
+    }
+  </script>
+
   <!-- Motion One for scroll animations -->
   <script src="https://cdn.jsdelivr.net/npm/@motionone/dom/dist/motion-one.umd.min.js"></script>
-  <style src="style.css">
+
+  <style>
+    body {
+      background-color: #1C1C20;
+      color: #E7E7E7;
+      font-family: 'Inter', sans-serif;
+    }
+
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -16,89 +40,98 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .btn-primary {
+      @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition;
+    }
+
+    .card {
+      @apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg;
+    }
   </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-900">
+
+<body class="font-sans bg-dark text-light">
   <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
+  <header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="index.html" class="text-2xl font-bold text-blue-600">SecuroWindow</a>
+      <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
       <nav class="space-x-6">
-        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-        <a href="products.html" class="hover:text-blue-600">Products</a>
-        <a href="why.html" class="hover:text-blue-600">Why Us</a>
-        <a href="gallery.html" class="hover:text-blue-600">Gallery</a>
-        <a href="testimonials.html" class="hover:text-blue-600">Testimonials</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        <a href="index.html" class="text-primary font-semibold">Home</a>
+        <a href="products.html" class="hover:text-primary">Products</a>
+        <a href="why.html" class="hover:text-primary">Why Us</a>
+        <a href="gallery.html" class="hover:text-primary">Gallery</a>
+        <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
+        <a href="about.html" class="hover:text-primary">About</a>
+        <a href="contact.html" class="hover:text-primary">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="bg-blue-600 text-white py-24 text-center">
+  <section class="bg-primary text-dark py-24 text-center">
     <h1 class="text-5xl font-extrabold fade-up">Add Text Here...</h1>
     <p class="mt-6 text-lg fade-up">Add Text Here...</p>
-    <a href="products.html" class="inline-block mt-8 bg-white text-blue-600 font-semibold px-6 py-3 rounded-2xl shadow hover:bg-gray-100 fade-up">View Products</a>
+    <a href="products.html" class="inline-block mt-8 btn-primary fade-up">View Products</a>
   </section>
 
   <!-- Why Choose Us -->
   <section class="container mx-auto py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-12 fade-up">Why Choose SecuroWindow?</h2>
+    <h2 class="text-3xl font-bold mb-12 fade-up text-primary">Why Choose SecuroWindow?</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <h3 class="text-xl font-semibold text-blue-600">Add Text Here...</h3>
-        <p class="mt-4 text-gray-600">Add Text Here...</p>
+      <div class="card fade-up">
+        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
+        <p class="mt-4 text-light/80">Add Text Here...</p>
       </div>
-      <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <h3 class="text-xl font-semibold text-blue-600">Add Text Here...</h3>
-        <p class="mt-4 text-gray-600">Add Text Here...</p>
+      <div class="card fade-up">
+        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
+        <p class="mt-4 text-light/80">Add Text Here...</p>
       </div>
-      <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <h3 class="text-xl font-semibold text-blue-600">Add Text Here...</h3>
-        <p class="mt-4 text-gray-600">Add Text Here...</p>
+      <div class="card fade-up">
+        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
+        <p class="mt-4 text-light/80">Add Text Here...</p>
       </div>
     </div>
   </section>
 
   <!-- Gallery Preview -->
-  <section class="bg-gray-100 py-16 px-6">
+  <section class="bg-dark/90 py-16 px-6">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8 fade-up">See Our Work</h2>
+      <h2 class="text-3xl font-bold mb-8 fade-up text-primary">See Our Work</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <img src="images/gallery1.jpg" alt="Gallery 1" class="rounded-xl shadow-lg fade-up">
         <img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl shadow-lg fade-up">
         <img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl shadow-lg fade-up">
       </div>
-      <a href="gallery.html" class="inline-block mt-10 bg-blue-600 text-white px-6 py-3 rounded-2xl shadow hover:bg-blue-700 fade-up">View Full Gallery</a>
+      <a href="gallery.html" class="inline-block mt-10 btn-primary fade-up">View Full Gallery</a>
     </div>
   </section>
 
   <!-- Testimonials Preview -->
   <section class="container mx-auto py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-12 fade-up">What Our Clients Say</h2>
+    <h2 class="text-3xl font-bold mb-12 fade-up text-primary">What Our Clients Say</h2>
     <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <p class="text-gray-700 italic">“Add Text Here...”</p>
-        <p class="mt-4 font-semibold text-blue-600">– Anonymous</p>
+      <div class="card fade-up">
+        <p class="italic text-light/90">“Add Text Here...”</p>
+        <p class="mt-4 font-semibold text-primary">– Anonymous</p>
       </div>
-      <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <p class="text-gray-700 italic">“Add Text Here...”</p>
-        <p class="mt-4 font-semibold text-blue-600">– Anonymous</p>
+      <div class="card fade-up">
+        <p class="italic text-light/90">“Add Text Here...”</p>
+        <p class="mt-4 font-semibold text-primary">– Anonymous</p>
       </div>
     </div>
-    <a href="testimonials.html" class="inline-block mt-10 bg-blue-600 text-white px-6 py-3 rounded-2xl shadow hover:bg-blue-700 fade-up">Read More Reviews</a>
+    <a href="testimonials.html" class="inline-block mt-10 btn-primary fade-up">Read More Reviews</a>
   </section>
 
   <!-- CTA -->
-  <section class="bg-blue-600 text-white text-center py-16 px-6">
+  <section class="bg-primary text-dark text-center py-16 px-6">
     <h2 class="text-3xl font-bold fade-up">Ready to Secure Your Windows?</h2>
     <p class="mt-4 text-lg fade-up">Contact us today for a free consultation and quote.</p>
-    <a href="contact.html" class="inline-block mt-8 bg-white text-blue-600 font-semibold px-6 py-3 rounded-2xl shadow hover:bg-gray-100 fade-up">Get in Touch</a>
+    <a href="contact.html" class="inline-block mt-8 bg-dark text-primary font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-80 fade-up">Get in Touch</a>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 py-8 mt-16">
+  <footer class="bg-dark text-light/70 py-8 mt-16 border-t border-primary/30">
     <div class="container mx-auto text-center">
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
     </div>
