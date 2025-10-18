@@ -1,107 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why Choose Us | SecuroWindow</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#E2CD82',
-        dark: '#1C1C20',
-        light: '#E7E7E7',
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Choose Us | SecuroWindow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E2CD82', // gold accent
+            dark: '#1C1C20',    // dark background
+            light: '#E7E7E7',   // light text
+          },
+        },
       },
-    },
-  },
-}
-</script>
-<style>
-body {background-color:#1C1C20; color:#E7E7E7; font-family:'Inter',sans-serif;}
-.fade-up {opacity:0; transform:translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease;}
-.fade-up.visible {opacity:1; transform:translateY(0);}
-.card {@apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center;}
-.btn-primary {
-  @apply px-6 py-3 font-semibold rounded-full transition;
-  border: 2px solid #E2CD82; color: #E2CD82; background: transparent; position:relative; overflow:hidden;
-}
-.btn-primary::after {
-  content:""; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(to right,#E2CD82,#1C1C20); transition:0.5s; z-index:0;
-}
-.btn-primary:hover::after {left:0;}
-.btn-primary span {position:relative; z-index:10;}
-.table-card {@apply bg-dark/80 border border-primary/30 rounded-2xl p-6 shadow-lg text-center;}
-.tick {color:#E2CD82; font-weight:bold;}
-</style>
+    }
+  </script>
+  <style>
+    body {
+      background-color: #1C1C20;
+      color: #E7E7E7;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card style */
+    .card {
+      @apply bg-dark/80 rounded-2xl p-6 shadow-lg text-center;
+    }
+
+    /* Golden tick */
+    .tick {
+      color: #E2CD82;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    /* Comparison card */
+    .comp-card {
+      @apply bg-dark/80 border-2 border-primary rounded-2xl p-6 shadow-lg text-center;
+    }
+
+    /* Capsular button */
+    .btn {
+      @apply relative rounded-full font-semibold px-8 py-3 border-2 overflow-hidden transition-all duration-300;
+    }
+    .btn-dark {
+      @apply border-primary text-primary bg-transparent;
+    }
+    .btn-dark:hover {
+      background: linear-gradient(to right, #E2CD82, #FFD85C);
+      color: #1C1C20;
+    }
+    .btn-gold {
+      @apply border-dark text-dark bg-primary;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(to right, #1C1C20, #333333);
+      color: #E2CD82;
+    }
+  </style>
 </head>
 <body class="font-sans">
 
-<!-- Header -->
-<header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
-    <nav class="space-x-6">
-      <a href="index.html" class="hover:text-primary">Home</a>
-      <a href="products.html" class="hover:text-primary">Products</a>
-      <a href="why.html" class="text-primary font-semibold">Why Us</a>
-      <a href="gallery.html" class="hover:text-primary">Gallery</a>
-      <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
-      <a href="contact.html" class="hover:text-primary">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- Hero -->
-<section class="bg-dark text-light py-16 text-center fade-up">
-  <h1 class="text-4xl font-bold text-primary">Why Choose Us</h1>
-  <p class="mt-4 text-lg">Trusted, certified, and committed to your safety</p>
-</section>
-
-<!-- Our Advantages -->
-<main class="container mx-auto py-12 px-6">
-  <h2 class="text-3xl font-bold mb-12 fade-up text-primary text-center">Our Advantages</h2>
-  <ul class="grid md:grid-cols-2 gap-8">
-    <li class="card fade-up"><span class="tick">✔</span> Over 10 years of industry experience</li>
-    <li class="card fade-up"><span class="tick">✔</span> Certified and insured installers</li>
-    <li class="card fade-up"><span class="tick">✔</span> Rust-resistant, high-quality steel</li>
-    <li class="card fade-up"><span class="tick">✔</span> Warranty & satisfaction guarantee</li>
-  </ul>
-
-  <!-- Comparison Table as Cards -->
-  <h2 class="text-3xl font-bold mt-16 mb-6 fade-up text-primary text-center">Comparison</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="table-card fade-up">
-      <h3 class="text-xl font-semibold mb-4 text-primary">Durability</h3>
-      <p class="text-light/80 mb-2">SecuroWindow: 20+ years</p>
-      <p class="text-light/80">Others: 5–10 years</p>
+  <!-- Header -->
+  <header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-primary">Home</a>
+        <a href="products.html" class="hover:text-primary">Products</a>
+        <a href="why.html" class="text-primary font-semibold">Why Us</a>
+        <a href="gallery.html" class="hover:text-primary">Gallery</a>
+        <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
+        <a href="contact.html" class="hover:text-primary">Contact</a>
+      </nav>
     </div>
-    <div class="table-card fade-up">
-      <h3 class="text-xl font-semibold mb-4 text-primary">Customization</h3>
-      <p class="text-light/80 mb-2">SecuroWindow: Full color & design options</p>
-      <p class="text-light/80">Others: Limited</p>
-    </div>
-    <div class="table-card fade-up">
-      <h3 class="text-xl font-semibold mb-4 text-primary">Warranty</h3>
-      <p class="text-light/80 mb-2">SecuroWindow: Yes</p>
-      <p class="text-light/80">Others: No</p>
-    </div>
-  </div>
-</main>
+  </header>
 
-<!-- Footer -->
-<footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
-  <div class="container mx-auto text-center">
-    <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Hero Section -->
+  <section class="bg-dark text-light py-16 text-center fade-up">
+    <h1 class="text-4xl font-bold text-primary">Why Choose Us</h1>
+    <p class="mt-4 text-lg">Trusted, certified, and committed to your safety</p>
+  </section>
 
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {if(entry.isIntersecting) entry.target.classList.add('visible');});
-},{threshold:0.2});
-document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-</script>
+  <!-- Main Content -->
+  <main class="container mx-auto py-12 px-6">
+    <!-- Our Advantages -->
+    <h2 class="text-3xl font-bold mb-8 text-center text-primary fade-up">Our Advantages</h2>
+    <ul class="grid md:grid-cols-2 gap-8">
+      <li class="card fade-up"><span class="tick">✔</span>Over 10 years of industry experience</li>
+      <li class="card fade-up"><span class="tick">✔</span>Certified and insured installers</li>
+      <li class="card fade-up"><span class="tick">✔</span>Rust-resistant, high-quality steel</li>
+      <li class="card fade-up"><span class="tick">✔</span>Warranty & satisfaction guarantee</li>
+    </ul>
+
+    <!-- Comparison Section -->
+    <h2 class="text-3xl font-bold mt-12 mb-8 text-center text-primary fade-up">Comparison</h2>
+    <div class="flex flex-col md:flex-row justify-center items-start gap-6 fade-up">
+      <div class="comp-card flex-1">
+        <h3 class="font-bold text-xl mb-4">Durability</h3>
+        <p class="text-lg mb-2">SecuroWindow: 20+ years</p>
+        <p class="text-lg">Others: 5–10 years</p>
+      </div>
+      <div class="comp-card flex-1">
+        <h3 class="font-bold text-xl mb-4">Customization</h3>
+        <p class="text-lg mb-2">SecuroWindow: Full color & design options</p>
+        <p class="text-lg">Others: Limited</p>
+      </div>
+      <div class="comp-card flex-1">
+        <h3 class="font-bold text-xl mb-4">Warranty</h3>
+        <p class="text-lg mb-2">SecuroWindow: Yes</p>
+        <p class="text-lg">Others: No</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
