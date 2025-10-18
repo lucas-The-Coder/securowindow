@@ -31,18 +31,18 @@
 
     /* Buttons for light pages */
     .btn-primary {
-      @apply bg-dark text-primary font-semibold px-4 py-2 rounded-2xl shadow hover:opacity-90 transition;
+      @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition;
     }
 
     /* Cards for light pages */
     .card {
-      @apply bg-light/90 border border-dark/30 rounded-2xl p-6 shadow-lg;
+      @apply bg-light/90 border border-dark/30 rounded-2xl p-6 shadow-lg fade-up;
       color: #1C1C20;
     }
 
     /* Section titles and links */
     .section-title {
-      @apply text-primary text-2xl font-bold mb-3;
+      @apply text-primary text-2xl font-bold mb-6;
     }
     .link {
       @apply text-dark hover:text-primary;
@@ -80,27 +80,28 @@
   <!-- Hero Banner -->
   <section class="bg-light text-dark py-16 text-center fade-up">
     <h1 class="text-4xl font-bold text-primary">Our Products & Services</h1>
-    <p class="mt-4 text-lg">High-quality window protection for your home or business.</p>
+    <p class="mt-4 text-lg">High-quality window protection designed for your home or business.</p>
+    <a href="#products" class="inline-block mt-8 btn-primary fade-up">Explore Our Products</a>
   </section>
 
-  <!-- Content -->
-  <main class="container mx-auto py-12 px-6">
+  <!-- Products Section -->
+  <main class="container mx-auto py-12 px-6" id="products">
     <h2 class="section-title">Types of Safety Bars</h2>
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Product Card -->
-      <div class="card fade-up">
+      <div class="card">
         <img src="images/standard-bars.jpg" alt="Standard Bars" class="rounded-lg mb-4">
         <h3 class="text-xl font-semibold">Standard Safety Bars</h3>
         <p class="mt-2">Reliable protection for everyday safety.</p>
       </div>
       <!-- Product Card -->
-      <div class="card fade-up">
+      <div class="card">
         <img src="images/decorative-bars.jpg" alt="Decorative Bars" class="rounded-lg mb-4">
         <h3 class="text-xl font-semibold">Decorative Designs</h3>
         <p class="mt-2">Stylish bars that enhance your home’s aesthetics.</p>
       </div>
       <!-- Product Card -->
-      <div class="card fade-up">
+      <div class="card">
         <img src="images/burglar-bars.jpg" alt="Burglar Resistant" class="rounded-lg mb-4">
         <h3 class="text-xl font-semibold">Burglar-Resistant Bars</h3>
         <p class="mt-2">Extra-strong bars for maximum security.</p>
@@ -112,6 +113,7 @@
     <p class="text-dark leading-relaxed">
       Professional installation ensures your safety bars are secure and properly fitted. Our experienced team provides fast, reliable service tailored to your needs.
     </p>
+    <a href="contact.html" class="inline-block mt-8 btn-primary fade-up">Request Installation</a>
   </main>
 
   <!-- Footer -->
@@ -120,5 +122,16 @@
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Fade-up Scroll Animation -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
