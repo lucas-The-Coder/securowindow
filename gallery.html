@@ -7,8 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background-color: #1C1C20; /* dark theme */
-      color: #E7E7E7;            /* light text */
+      background-color: #1C1C20; /* Dark background */
+      color: #E7E7E7;            /* Light text */
       font-family: 'Inter', sans-serif;
     }
     .fade-up {
@@ -19,6 +19,13 @@
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    .gallery-img {
+      width: 500px;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
   </style>
 </head>
@@ -48,13 +55,13 @@
   <!-- Gallery Main -->
   <main class="bg-dark py-12" align="center">
     <div class="container mx-auto px-6 flex justify-center">
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl">
-        <img src="src/window1.jpeg" alt="Installation 1" class="rounded-xl shadow fade-up">
-        <img src="src/window2.jpeg" alt="Installation 2" class="rounded-xl shadow fade-up">
-        <img src="src/window3.jpeg" alt="Installation 3" class="rounded-xl shadow fade-up">
-        <img src="src/window4.jpeg" alt="Installation 4" class="rounded-xl shadow fade-up">
-        <img src="src/window5.jpeg" alt="Installation 5" class="rounded-xl shadow fade-up">
-        <img src="src/window6.jpeg" alt="Installation 6" class="rounded-xl shadow fade-up">
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl justify-items-center">
+        <img src="src/window1.jpeg" alt="Installation 1" class="gallery-img fade-up">
+        <img src="src/window2.jpeg" alt="Installation 2" class="gallery-img fade-up">
+        <img src="src/window3.jpeg" alt="Installation 3" class="gallery-img fade-up">
+        <img src="src/window4.jpeg" alt="Installation 4" class="gallery-img fade-up">
+        <img src="src/window5.jpeg" alt="Installation 5" class="gallery-img fade-up">
+        <img src="src/window6.jpeg" alt="Installation 6" class="gallery-img fade-up">
       </div>
     </div>
   </main>
