@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why Choose Us | SecuroWindow</title>
 
-  <!-- Tailwind CDN with Securowindow dark theme -->
+  <!-- Tailwind CDN with SecuroWindow dark theme -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -23,8 +23,8 @@
 
   <style>
     body {
-      background-color: #1C1C20; /* Dark background */
-      color: #E7E7E7;            /* Light text */
+      background-color: #1C1C20;
+      color: #E7E7E7;
       font-family: 'Inter', sans-serif;
     }
 
@@ -50,10 +50,21 @@
       @apply w-full border-collapse;
     }
     th, td {
-      @apply border border-primary p-3 text-light;
+      @apply border border-primary p-4 text-light text-left;
     }
     thead {
       @apply bg-dark/70 text-primary;
+    }
+
+    /* Comparison highlights */
+    .securowindow {
+      @apply text-primary font-semibold;
+    }
+    .table-category {
+      @apply bg-dark/80 text-primary font-semibold text-lg;
+    }
+    .table-row:hover {
+      @apply bg-dark/70;
     }
   </style>
 </head>
@@ -83,17 +94,44 @@
 
   <!-- Main Content -->
   <main class="container mx-auto py-12 px-6">
+
+    <!-- Advantages -->
     <h2 class="section-title">Our Advantages</h2>
     <ul class="grid md:grid-cols-2 gap-6">
-      <li class="card">✔ Over 10 years of industry experience</li>
-      <li class="card">✔ Certified and insured installers</li>
-      <li class="card">✔ Rust-resistant, high-quality steel</li>
-      <li class="card">✔ Warranty & satisfaction guarantee</li>
+      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
+        <span class="text-primary text-2xl mt-1">✔</span>
+        <div>
+          <h3 class="font-semibold text-lg">10+ Years of Experience</h3>
+          <p class="text-light/80 mt-1">We’ve been securing homes and businesses for over a decade, building trust and reliability.</p>
+        </div>
+      </li>
+      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
+        <span class="text-primary text-2xl mt-1">✔</span>
+        <div>
+          <h3 class="font-semibold text-lg">Certified & Insured Installers</h3>
+          <p class="text-light/80 mt-1">Our team is fully certified and insured to provide safe and professional installation services.</p>
+        </div>
+      </li>
+      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
+        <span class="text-primary text-2xl mt-1">✔</span>
+        <div>
+          <h3 class="font-semibold text-lg">Rust-Resistant, High-Quality Steel</h3>
+          <p class="text-light/80 mt-1">We use premium steel materials that ensure durability and protection for years to come.</p>
+        </div>
+      </li>
+      <li class="card flex items-start gap-4 hover:scale-105 transform transition duration-300">
+        <span class="text-primary text-2xl mt-1">✔</span>
+        <div>
+          <h3 class="font-semibold text-lg">Warranty & Satisfaction Guarantee</h3>
+          <p class="text-light/80 mt-1">We stand behind our products and services with a full warranty and guarantee of satisfaction.</p>
+        </div>
+      </li>
     </ul>
 
+    <!-- Comparison -->
     <h2 class="section-title mt-12 mb-6">Comparison</h2>
-    <div class="overflow-x-auto">
-      <table class="fade-up">
+    <div class="overflow-x-auto fade-up">
+      <table class="min-w-full">
         <thead>
           <tr>
             <th>Feature</th>
@@ -102,24 +140,49 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Durability</td>
-            <td>20+ years</td>
+          <tr class="table-category">
+            <td colspan="3">Durability & Materials</td>
+          </tr>
+          <tr class="table-row">
+            <td>Steel Quality</td>
+            <td class="securowindow">High-grade, rust-resistant</td>
+            <td>Standard steel</td>
+          </tr>
+          <tr class="table-row">
+            <td>Lifespan</td>
+            <td class="securowindow">20+ years</td>
             <td>5–10 years</td>
           </tr>
-          <tr>
-            <td>Customization</td>
-            <td>Full color & design options</td>
+          <tr class="table-category">
+            <td colspan="3">Customization & Design</td>
+          </tr>
+          <tr class="table-row">
+            <td>Colors & Styles</td>
+            <td class="securowindow">Full color & design options</td>
             <td>Limited</td>
           </tr>
-          <tr>
+          <tr class="table-row">
+            <td>Custom Fit</td>
+            <td class="securowindow">Tailored to your windows</td>
+            <td>Standard sizes only</td>
+          </tr>
+          <tr class="table-category">
+            <td colspan="3">Support & Warranty</td>
+          </tr>
+          <tr class="table-row">
             <td>Warranty</td>
-            <td>Yes</td>
+            <td class="securowindow">Yes, full coverage</td>
             <td>No</td>
+          </tr>
+          <tr class="table-row">
+            <td>Installation Support</td>
+            <td class="securowindow">Professional installers available</td>
+            <td>Limited or DIY</td>
           </tr>
         </tbody>
       </table>
     </div>
+
   </main>
 
   <!-- Footer -->
