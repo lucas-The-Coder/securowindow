@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Products & Services | SecuroWindow</title>
 
-  <!-- Tailwind CDN with Securowindow dark theme -->
+  <!-- Tailwind CDN with SecuroWindow dark theme -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,33 +22,12 @@
   </script>
 
   <style>
-    /* Dark page body */
     body {
-      background-color: #1C1C20; /* Dark background */
-      color: #E7E7E7;            /* Light text */
+      background-color: #1C1C20;
+      color: #E7E7E7;
       font-family: 'Inter', sans-serif;
     }
 
-    /* Buttons for dark pages */
-    .btn-primary {
-      @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition;
-    }
-
-    /* Cards for dark pages */
-    .card {
-      @apply bg-dark/90 border border-primary/30 rounded-2xl p-6 shadow-lg fade-up;
-      color: #E7E7E7;
-    }
-
-    /* Section titles and links */
-    .section-title {
-      @apply text-primary text-2xl font-bold mb-6;
-    }
-    .link {
-      @apply text-primary hover:underline;
-    }
-
-    /* Fade-up animation */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -58,9 +37,22 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .section-title {
+      @apply text-primary text-2xl font-bold mb-6;
+    }
+
+    .card {
+      @apply bg-dark/90 border border-primary/30 rounded-2xl p-6 shadow-lg;
+    }
+
+    .btn-primary {
+      @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition;
+    }
   </style>
 </head>
 <body class="font-sans">
+
   <!-- Header -->
   <header class="bg-dark/95 backdrop-blur-sm border-b border-primary sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
@@ -77,7 +69,7 @@
     </div>
   </header>
 
-  <!-- Hero Banner -->
+  <!-- Hero Section -->
   <section class="bg-dark text-light py-16 text-center fade-up">
     <h1 class="text-4xl font-bold text-primary">Our Products & Services</h1>
     <p class="mt-4 text-lg">High-quality window protection designed for your home or business.</p>
@@ -89,31 +81,29 @@
     <h2 class="section-title">Types of Safety Bars</h2>
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Product Card -->
-      <div class="card">
+      <div class="card fade-up">
         <img src="images/standard-bars.jpg" alt="Standard Bars" class="rounded-lg mb-4">
-        <h3 class="text-xl font-semibold">Standard Safety Bars</h3>
-        <p class="mt-2">Reliable protection for everyday safety.</p>
+        <h3 class="text-xl font-semibold text-primary">Standard Safety Bars</h3>
+        <p class="mt-2 text-light/80">Reliable protection for everyday safety.</p>
       </div>
-      <!-- Product Card -->
-      <div class="card">
+      <div class="card fade-up">
         <img src="images/decorative-bars.jpg" alt="Decorative Bars" class="rounded-lg mb-4">
-        <h3 class="text-xl font-semibold">Decorative Designs</h3>
-        <p class="mt-2">Stylish bars that enhance your home’s aesthetics.</p>
+        <h3 class="text-xl font-semibold text-primary">Decorative Designs</h3>
+        <p class="mt-2 text-light/80">Stylish bars that enhance your home’s aesthetics.</p>
       </div>
-      <!-- Product Card -->
-      <div class="card">
+      <div class="card fade-up">
         <img src="images/burglar-bars.jpg" alt="Burglar Resistant" class="rounded-lg mb-4">
-        <h3 class="text-xl font-semibold">Burglar-Resistant Bars</h3>
-        <p class="mt-2">Extra-strong bars for maximum security.</p>
+        <h3 class="text-xl font-semibold text-primary">Burglar-Resistant Bars</h3>
+        <p class="mt-2 text-light/80">Extra-strong bars for maximum security.</p>
       </div>
     </div>
 
     <!-- Installation Services -->
     <h2 class="section-title mt-12">Installation Services</h2>
-    <p class="text-light leading-relaxed">
+    <p class="text-light/80 leading-relaxed mb-6">
       Professional installation ensures your safety bars are secure and properly fitted. Our experienced team provides fast, reliable service tailored to your needs.
     </p>
-    <a href="contact.html" class="inline-block mt-8 btn-primary fade-up">Request Installation</a>
+    <a href="contact.html" class="inline-block btn-primary fade-up">Request Installation</a>
   </main>
 
   <!-- Footer -->
@@ -130,7 +120,6 @@
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 </body>

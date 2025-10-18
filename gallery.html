@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | SecuroWindow</title>
 
-  <!-- Tailwind CDN with Securowindow dark theme -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#E2CD82', // Gold accent
-            dark: '#1C1C20',    // Dark background
-            light: '#E7E7E7',   // Light text
+            primary: '#E2CD82',
+            dark: '#1C1C20',
+            light: '#E7E7E7',
           },
         },
       },
@@ -23,25 +22,17 @@
 
   <style>
     body {
-      background-color: #1C1C20; /* Dark background */
-      color: #E7E7E7;            /* Light text */
+      background-color: #1C1C20;
+      color: #E7E7E7;
       font-family: 'Inter', sans-serif;
     }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .section-title { @apply text-primary text-2xl font-bold mb-6; }
   </style>
 </head>
 <body class="font-sans">
 
-  <!-- Header -->
   <header class="bg-dark/95 backdrop-blur-sm border-b border-primary sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
@@ -57,37 +48,29 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="bg-dark text-light py-16 text-center fade-up">
     <h1 class="text-4xl font-bold text-primary">Our Work Gallery</h1>
-    <p class="mt-4 text-lg">See how we’ve secured homes & businesses</p>
+    <p class="mt-4 text-light/80">See how we’ve secured homes & businesses</p>
   </section>
 
-  <!-- Gallery Section -->
-  <main class="container mx-auto py-12 px-6">
-    <div class="grid md:grid-cols-3 gap-6">
-      <img src="images/gallery1.jpg" alt="Installation 1" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery2.jpg" alt="Installation 2" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery3.jpg" alt="Installation 3" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery4.jpg" alt="Installation 4" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery5.jpg" alt="Installation 5" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery6.jpg" alt="Installation 6" class="rounded-xl shadow-lg fade-up">
-    </div>
+  <main class="container mx-auto py-12 px-6 grid md:grid-cols-3 gap-6 fade-up">
+    <img src="images/gallery1.jpg" alt="Installation 1" class="rounded-xl shadow-lg">
+    <img src="images/gallery2.jpg" alt="Installation 2" class="rounded-xl shadow-lg">
+    <img src="images/gallery3.jpg" alt="Installation 3" class="rounded-xl shadow-lg">
+    <img src="images/gallery4.jpg" alt="Installation 4" class="rounded-xl shadow-lg">
+    <img src="images/gallery5.jpg" alt="Installation 5" class="rounded-xl shadow-lg">
+    <img src="images/gallery6.jpg" alt="Installation 6" class="rounded-xl shadow-lg">
   </main>
 
-  <!-- Footer -->
   <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
     <div class="container mx-auto text-center">
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Fade-up Scroll Animation -->
   <script>
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.2 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
