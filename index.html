@@ -1,151 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SecuroWindow | Secure Your Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecuroWindow | Secure Your Home</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#E2CD82',
-        dark: '#1C1C20',
-        light: '#E7E7E7',
+  <!-- Tailwind CDN + Custom Colors -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E2CD82', // gold
+            dark: '#1C1C20',    // charcoal
+            light: '#E7E7E7',   // light gray
+          },
+        },
       },
-    },
-  },
-}
-</script>
+    }
+  </script>
 
-<style>
-body {
-  background-color: #1C1C20;
-  color: #E7E7E7;
-  font-family: 'Inter', sans-serif;
-}
+  <style>
+    body {
+      background-color: #1C1C20;
+      color: #E7E7E7;
+      font-family: 'Inter', sans-serif;
+    }
 
-.fade-up {opacity:0; transform:translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease;}
-.fade-up.visible {opacity:1; transform:translateY(0);}
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.btn-primary {
-  @apply px-6 py-3 font-semibold rounded-full transition;
-  border: 2px solid #E2CD82;
-  color: #E2CD82;
-  background-color: transparent;
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(to right, #E2CD82, #1C1C20);
-  transition: all 0.5s ease;
-  z-index: 0;
-}
-.btn-primary:hover::after {left:0;}
-.btn-primary span {position: relative; z-index: 10;}
+    /* Capsular buttons */
+    .btn {
+      @apply rounded-full font-semibold px-8 py-3 border-2 transition-all duration-300 relative overflow-hidden;
+    }
 
-.card {
-  @apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center;
-}
-</style>
+    .btn-gold-outline {
+      border-color: #E2CD82;
+      color: #E2CD82;
+      background-color: transparent;
+    }
+
+    .btn-dark-outline {
+      border-color: #1C1C20;
+      color: #1C1C20;
+      background-color: transparent;
+    }
+
+    /* Gradient hover effect */
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #E2CD82, #FFD85C);
+      transition: all 0.4s ease;
+      z-index: 0;
+    }
+    .btn:hover::before {
+      left: 0;
+    }
+    .btn span {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Card style */
+    .card {
+      @apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center;
+    }
+
+  </style>
 </head>
-<body class="font-sans bg-dark text-light">
 
-<!-- Header -->
-<header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
-    <nav class="space-x-6">
-      <a href="index.html" class="text-primary font-semibold">Home</a>
-      <a href="products.html" class="hover:text-primary">Products</a>
-      <a href="why.html" class="hover:text-primary">Why Us</a>
-      <a href="gallery.html" class="hover:text-primary">Gallery</a>
-      <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
-      <a href="contact.html" class="hover:text-primary">Contact</a>
-    </nav>
-  </div>
-</header>
+<body class="font-sans">
 
-<!-- Hero -->
-<section class="bg-primary text-dark py-24 text-center">
-  <h1 class="text-5xl font-extrabold fade-up">Add Text Here...</h1>
-  <p class="mt-6 text-lg fade-up">Add Text Here...</p>
-  <a href="products.html" class="btn-primary fade-up mt-8 inline-block"><span>View Products</span></a>
-</section>
-
-<!-- Why Choose Us -->
-<section class="container mx-auto py-16 px-6 text-center">
-  <h2 class="text-3xl font-bold mb-12 fade-up text-primary">Why Choose SecuroWindow?</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="card fade-up">
-      <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
-      <p class="mt-4 text-light/80">Add Text Here...</p>
+  <!-- Header -->
+  <header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-primary font-semibold">Home</a>
+        <a href="products.html" class="hover:text-primary">Products</a>
+        <a href="why.html" class="hover:text-primary">Why Us</a>
+        <a href="gallery.html" class="hover:text-primary">Gallery</a>
+        <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
+        <a href="contact.html" class="hover:text-primary">Contact</a>
+      </nav>
     </div>
-    <div class="card fade-up">
-      <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
-      <p class="mt-4 text-light/80">Add Text Here...</p>
-    </div>
-    <div class="card fade-up">
-      <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
-      <p class="mt-4 text-light/80">Add Text Here...</p>
-    </div>
-  </div>
-</section>
+  </header>
 
-<!-- Gallery Preview -->
-<section class="bg-dark/90 py-16 px-6">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8 fade-up text-primary">See Our Work</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <img src="images/gallery1.jpg" alt="Gallery 1" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl shadow-lg fade-up">
-      <img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl shadow-lg fade-up">
+  <!-- Hero -->
+  <section class="bg-primary text-dark py-24 text-center fade-up">
+    <h1 class="text-5xl font-extrabold fade-up">Add Text Here...</h1>
+    <p class="mt-6 text-lg fade-up">Add Text Here...</p>
+    <a href="products.html" class="btn btn-dark-outline mt-8 inline-block fade-up"><span>View Products</span></a>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="container mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 fade-up text-primary">Why Choose SecuroWindow?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card fade-up">
+        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
+        <p class="mt-4 text-light/80">Add Text Here...</p>
+      </div>
+      <div class="card fade-up">
+        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
+        <p class="mt-4 text-light/80">Add Text Here...</p>
+      </div>
+      <div class="card fade-up">
+        <h3 class="text-xl font-semibold text-primary">Add Text Here...</h3>
+        <p class="mt-4 text-light/80">Add Text Here...</p>
+      </div>
     </div>
-    <a href="gallery.html" class="btn-primary fade-up mt-10 inline-block"><span>View Full Gallery</span></a>
-  </div>
-</section>
+  </section>
 
-<!-- Testimonials Preview -->
-<section class="container mx-auto py-16 px-6 text-center">
-  <h2 class="text-3xl font-bold mb-12 fade-up text-primary">What Our Clients Say</h2>
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="card fade-up text-center">
-      <p class="italic text-light/90 text-lg">“Add Text Here...”</p>
-      <p class="mt-4 font-semibold text-primary">– Anonymous</p>
+  <!-- Gallery Preview -->
+  <section class="bg-dark/90 py-16 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 fade-up text-primary">See Our Work</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <img src="images/gallery1.jpg" alt="Gallery 1" class="rounded-xl shadow-lg fade-up">
+        <img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl shadow-lg fade-up">
+        <img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl shadow-lg fade-up">
+      </div>
+      <a href="gallery.html" class="btn btn-dark-outline inline-block mt-10 fade-up"><span>View Full Gallery</span></a>
     </div>
-    <div class="card fade-up text-center">
-      <p class="italic text-light/90 text-lg">“Add Text Here...”</p>
-      <p class="mt-4 font-semibold text-primary">– Anonymous</p>
+  </section>
+
+  <!-- Testimonials Preview -->
+  <section class="container mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 fade-up text-primary">What Our Clients Say</h2>
+    <div class="space-y-8">
+      <div class="card fade-up">
+        <p class="italic text-light/90">“Add Text Here...”</p>
+        <p class="mt-4 font-semibold text-primary">– Anonymous</p>
+      </div>
+      <div class="card fade-up">
+        <p class="italic text-light/90">“Add Text Here...”</p>
+        <p class="mt-4 font-semibold text-primary">– Anonymous</p>
+      </div>
     </div>
-  </div>
-  <a href="testimonials.html" class="btn-primary fade-up mt-10 inline-block"><span>Read More Reviews</span></a>
-</section>
+    <a href="testimonials.html" class="btn btn-dark-outline inline-block mt-10 fade-up"><span>Read More Reviews</span></a>
+  </section>
 
-<!-- CTA -->
-<section class="bg-primary text-dark text-center py-16 px-6">
-  <h2 class="text-3xl font-bold fade-up">Ready to Secure Your Windows?</h2>
-  <p class="mt-4 text-lg fade-up">Contact us today for a free consultation and quote.</p>
-  <a href="contact.html" class="btn-primary fade-up mt-8 inline-block"><span>Get in Touch</span></a>
-</section>
+  <!-- CTA -->
+  <section class="bg-primary text-dark text-center py-16 px-6">
+    <h2 class="text-3xl font-bold fade-up">Ready to Secure Your Windows?</h2>
+    <p class="mt-4 text-lg fade-up">Contact us today for a free consultation and quote.</p>
+    <a href="contact.html" class="btn btn-dark-outline mt-8 inline-block fade-up"><span>Get in Touch</span></a>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-light/70 py-8 mt-16 border-t border-primary/30">
-  <div class="container mx-auto text-center">
-    <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="bg-dark text-light/70 py-8 mt-16 border-t border-primary/30">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
+    </div>
+  </footer>
 
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {if(entry.isIntersecting) entry.target.classList.add('visible');});
-}, {threshold:0.2});
-document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-</script>
+  <!-- Scroll Animation Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
