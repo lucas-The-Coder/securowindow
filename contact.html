@@ -62,9 +62,29 @@
       @apply opacity-100;
     }
 
-    /* ✅ Make form field text black */
-    input, textarea {
-      color: #000;
+    /* Force black text in form fields (including WebKit) and placeholders */
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    textarea::placeholder {
+      color: #000 !important;
+      -webkit-text-fill-color: #000 !important; /* Safari / Chrome */
+    }
+
+    /* For older browsers / extra specificity */
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      color: #000 !important;
+      -webkit-text-fill-color: #000 !important;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #666 !important; /* placeholder slightly muted but black-ish; change to #000 if you want pure black */
+      opacity: 1 !important;
     }
   </style>
 </head>
@@ -115,7 +135,7 @@
 
   <!-- Contact Form -->
   <main class="container mx-auto py-12 px-6">
-    <form action="mailto:markhendricks0@gmail.com" method="POST" enctype="text/plain" class="bg-dark/90 shadow-lg rounded-xl p-8 max-w-lg mx-auto text-center fade-up">
+    <form action="mailto:markhendricks0@gmail.com" method="POST" enctype="text/plain" class="contact-form bg-dark/90 shadow-lg rounded-xl p-8 max-w-lg mx-auto text-center fade-up">
       <div class="mb-4">
         <label class="block font-semibold mb-2 text-center">Name</label>
         <input type="text" name="name" class="w-full border rounded-full px-4 py-2 text-center" required>
