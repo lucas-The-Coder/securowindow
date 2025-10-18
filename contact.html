@@ -5,19 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | SecuroWindow</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#E2CD82', // gold accent
-            dark: '#1C1C20',    // dark background
-            light: '#E7E7E7',   // light text
-          },
-        },
-      },
-    }
-  </script>
+
   <style>
     body {
       background-color: #1C1C20;
@@ -35,15 +23,16 @@
       transform: translateY(0);
     }
 
+    /* Buttons */
     .btn {
-      @apply px-6 py-3 rounded-full font-semibold border-2 transition relative overflow-hidden;
+      @apply px-6 py-3 rounded-full font-semibold border-2 transition relative overflow-hidden inline-block;
     }
     .btn-yellow {
       @apply border-dark text-dark;
     }
     .btn-yellow::after {
       content: "";
-      @apply absolute inset-0 bg-gradient-to-r from-dark to-dark opacity-0 transition-all duration-500;
+      @apply absolute inset-0 bg-gradient-to-r from-dark to-dark opacity-0 transition-all duration-500 rounded-full;
       z-index: -1;
     }
     .btn-yellow:hover::after {
@@ -55,11 +44,29 @@
     }
     .btn-dark::after {
       content: "";
-      @apply absolute inset-0 bg-gradient-to-r from-primary to-primary opacity-0 transition-all duration-500;
+      @apply absolute inset-0 bg-gradient-to-r from-primary to-primary opacity-0 transition-all duration-500 rounded-full;
       z-index: -1;
     }
     .btn-dark:hover::after {
       @apply opacity-100;
+    }
+
+    /* Gold-tinted shadow for the form */
+    .contact-form {
+      @apply bg-dark/90 rounded-xl p-8 max-w-lg mx-auto text-center;
+      box-shadow: 0 4px 20px rgba(226, 205, 130, 0.5); /* gold tint shadow */
+    }
+
+    label {
+      @apply block font-semibold mb-2 text-center;
+    }
+
+    input, textarea {
+      @apply w-full border rounded-lg px-4 py-2 text-dark;
+    }
+
+    footer {
+      @apply bg-dark/95 text-light/70 py-8 mt-16 border-t border-primary/30;
     }
   </style>
 </head>
@@ -81,43 +88,43 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-dark text-light py-16 text-center fade-up">
-    <h1 class="text-4xl font-bold text-primary">Get in Touch</h1>
+  <section class="bg-primary text-dark py-16 text-center fade-up">
+    <h1 class="text-4xl font-bold">Get in Touch</h1>
     <p class="mt-4 text-lg">We’d love to hear from you</p>
   </section>
 
   <!-- Contact Form -->
   <main class="container mx-auto py-12 px-6">
-    <form action="mailto:info@securowindow.co.za" method="POST" enctype="text/plain" class="bg-dark/90 shadow-lg rounded-xl p-8 max-w-lg mx-auto text-center fade-up">
+    <form action="mailto:info@securowindow.co.za" method="POST" enctype="text/plain" class="contact-form fade-up">
       <div class="mb-4">
-        <label class="block font-semibold mb-2 text-center">Name</label>
-        <input type="text" name="name" class="w-full border rounded-full px-4 py-2 text-center" required>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
       </div>
       <div class="mb-4">
-        <label class="block font-semibold mb-2 text-center">Email</label>
-        <input type="email" name="email" class="w-full border rounded-full px-4 py-2 text-center" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
       </div>
       <div class="mb-4">
-        <label class="block font-semibold mb-2 text-center">Message</label>
-        <textarea name="message" class="w-full border rounded-xl px-4 py-2 h-32 text-center" required></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
       </div>
-      <button type="submit" class="btn btn-yellow mt-4">Send Message</button>
+      <button type="submit" class="btn btn-yellow">Send Message</button>
     </form>
 
     <div class="text-center mt-8">
-      <p class="text-gray-400">Or call us at <a href="tel:+27123456789" class="text-primary font-semibold">+27 12 345 6789</a></p>
+      <p class="text-light/80">Or call us at <a href="tel:+27123456789" class="text-primary font-semibold">+27 12 345 6789</a></p>
       <p class="mt-2"><a href="https://wa.me/27123456789" class="text-green-600 font-semibold">WhatsApp Chat</a></p>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
+  <footer>
     <div class="container mx-auto text-center">
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scroll Animation -->
+  <!-- Fade-up Scroll Animation -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
