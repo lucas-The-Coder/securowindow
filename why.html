@@ -1,163 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Choose Us | SecuroWindow</title>
-
-  <!-- Tailwind CDN + Custom Colors -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#E2CD82', // gold
-            dark: '#1C1C20',    // charcoal
-            light: '#E7E7E7',   // light gray
-          },
-        },
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Choose Us | SecuroWindow</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#E2CD82',
+        dark: '#1C1C20',
+        light: '#E7E7E7',
       },
-    }
-  </script>
-
-  <style>
-    body {
-      background-color: #1C1C20;
-      color: #E7E7E7;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Fade-up animation */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Headings */
-    h1, h2, h3 {
-      text-align: center;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      @apply font-semibold px-6 py-3 rounded-2xl shadow transition;
-      border-width: 2px;
-    }
-    .btn-gold {
-      @apply bg-primary text-dark border-dark hover:opacity-90;
-    }
-    .btn-dark {
-      @apply bg-dark text-primary border-primary hover:opacity-90;
-    }
-
-    /* Cards */
-    .card {
-      @apply p-6 rounded-2xl shadow-lg text-center;
-      border-width: 2px;
-      border-color: #E2CD82;
-    }
-  </style>
+    },
+  },
+}
+</script>
+<style>
+body {background-color:#1C1C20; color:#E7E7E7; font-family:'Inter',sans-serif;}
+.fade-up {opacity:0; transform:translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease;}
+.fade-up.visible {opacity:1; transform:translateY(0);}
+.card {@apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center;}
+.btn-primary {
+  @apply px-6 py-3 font-semibold rounded-full transition;
+  border: 2px solid #E2CD82; color: #E2CD82; background: transparent; position:relative; overflow:hidden;
+}
+.btn-primary::after {
+  content:""; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(to right,#E2CD82,#1C1C20); transition:0.5s; z-index:0;
+}
+.btn-primary:hover::after {left:0;}
+.btn-primary span {position:relative; z-index:10;}
+.table-card {@apply bg-dark/80 border border-primary/30 rounded-2xl p-6 shadow-lg text-center;}
+.tick {color:#E2CD82; font-weight:bold;}
+</style>
 </head>
 <body class="font-sans">
 
-  <!-- Header -->
-  <header class="bg-dark/95 backdrop-blur-sm border-b border-primary sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
-      <nav class="space-x-6">
-        <a href="index.html" class="hover:text-primary">Home</a>
-        <a href="products.html" class="hover:text-primary">Products</a>
-        <a href="why.html" class="text-primary font-semibold">Why Us</a>
-        <a href="gallery.html" class="hover:text-primary">Gallery</a>
-        <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
-        <a href="about.html" class="hover:text-primary">About</a>
-        <a href="contact.html" class="hover:text-primary">Contact</a>
-      </nav>
+<!-- Header -->
+<header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
+    <nav class="space-x-6">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="products.html" class="hover:text-primary">Products</a>
+      <a href="why.html" class="text-primary font-semibold">Why Us</a>
+      <a href="gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-dark text-light py-16 text-center fade-up">
+  <h1 class="text-4xl font-bold text-primary">Why Choose Us</h1>
+  <p class="mt-4 text-lg">Trusted, certified, and committed to your safety</p>
+</section>
+
+<!-- Our Advantages -->
+<main class="container mx-auto py-12 px-6">
+  <h2 class="text-3xl font-bold mb-12 fade-up text-primary text-center">Our Advantages</h2>
+  <ul class="grid md:grid-cols-2 gap-8">
+    <li class="card fade-up"><span class="tick">✔</span> Over 10 years of industry experience</li>
+    <li class="card fade-up"><span class="tick">✔</span> Certified and insured installers</li>
+    <li class="card fade-up"><span class="tick">✔</span> Rust-resistant, high-quality steel</li>
+    <li class="card fade-up"><span class="tick">✔</span> Warranty & satisfaction guarantee</li>
+  </ul>
+
+  <!-- Comparison Table as Cards -->
+  <h2 class="text-3xl font-bold mt-16 mb-6 fade-up text-primary text-center">Comparison</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="table-card fade-up">
+      <h3 class="text-xl font-semibold mb-4 text-primary">Durability</h3>
+      <p class="text-light/80 mb-2">SecuroWindow: 20+ years</p>
+      <p class="text-light/80">Others: 5–10 years</p>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="bg-dark text-light py-16 fade-up">
-    <h1 class="text-4xl font-bold text-primary">Why Choose Us</h1>
-    <p class="mt-4 text-lg">Trusted, certified, and committed to your safety</p>
-  </section>
-
-  <!-- Advantages -->
-  <main class="container mx-auto py-12 px-6">
-    <h2 class="text-3xl font-bold mb-12 text-primary fade-up">Our Advantages</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="card fade-up border-primary">
-        ✔ Over 10 years of industry experience
-      </div>
-      <div class="card fade-up border-primary">
-        ✔ Certified and insured installers
-      </div>
-      <div class="card fade-up border-primary">
-        ✔ Rust-resistant, high-quality steel
-      </div>
-      <div class="card fade-up border-primary">
-        ✔ Warranty & satisfaction guarantee
-      </div>
+    <div class="table-card fade-up">
+      <h3 class="text-xl font-semibold mb-4 text-primary">Customization</h3>
+      <p class="text-light/80 mb-2">SecuroWindow: Full color & design options</p>
+      <p class="text-light/80">Others: Limited</p>
     </div>
-
-    <!-- Comparison -->
-    <h2 class="text-3xl font-bold mt-16 mb-8 text-primary fade-up">Comparison</h2>
-    <div class="grid gap-6">
-      <!-- Header Row -->
-      <div class="grid grid-cols-3 gap-6">
-        <div class="card font-bold border-primary fade-up">Feature</div>
-        <div class="card font-bold border-primary fade-up">SecuroWindow</div>
-        <div class="card font-bold border-primary fade-up">Others</div>
-      </div>
-
-      <!-- Durability Row -->
-      <div class="grid grid-cols-3 gap-6">
-        <div class="card border-primary fade-up">Durability</div>
-        <div class="card border-primary fade-up">20+ years</div>
-        <div class="card border-primary fade-up">5–10 years</div>
-      </div>
-
-      <!-- Customization Row -->
-      <div class="grid grid-cols-3 gap-6">
-        <div class="card border-primary fade-up">Customization</div>
-        <div class="card border-primary fade-up">Full color & design options</div>
-        <div class="card border-primary fade-up">Limited</div>
-      </div>
-
-      <!-- Warranty Row -->
-      <div class="grid grid-cols-3 gap-6">
-        <div class="card border-primary fade-up">Warranty</div>
-        <div class="card border-primary fade-up">✔ Yes</div>
-        <div class="card border-primary fade-up">✖ No</div>
-      </div>
+    <div class="table-card fade-up">
+      <h3 class="text-xl font-semibold mb-4 text-primary">Warranty</h3>
+      <p class="text-light/80 mb-2">SecuroWindow: Yes</p>
+      <p class="text-light/80">Others: No</p>
     </div>
+  </div>
+</main>
 
-    <div class="text-center mt-12 fade-up">
-      <a href="contact.html" class="btn-primary btn-gold fade-up">Request Consultation</a>
-    </div>
-  </main>
+<!-- Footer -->
+<footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
+  </div>
+</footer>
 
-  <!-- Footer -->
-  <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Scroll Animation -->
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {if(entry.isIntersecting) entry.target.classList.add('visible');});
+},{threshold:0.2});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>

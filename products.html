@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Products & Services | SecuroWindow</title>
+<title>Products | SecuroWindow</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = { theme: { extend: { colors: { primary: '#E2CD82', dark: '#1C1C20', light: '#E7E7E7' }}}};
+tailwind.config = {theme:{extend:{colors:{primary:'#E2CD82', dark:'#1C1C20', light:'#E7E7E7'}}}};
 </script>
 <style>
-  body { background-color:#1C1C20; color:#E7E7E7; font-family:'Inter',sans-serif; }
-  .fade-up { opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease; }
-  .fade-up.visible { opacity:1; transform:translateY(0); }
-
-  .btn-primary { @apply font-semibold px-6 py-3 rounded-2xl shadow transition; border-width:2px; }
-  .btn-gold { background-color:#E2CD82; color:#1C1C20; border-color:#1C1C20; }
-  .btn-dark { background-color:#1C1C20; color:#E2CD82; border-color:#E2CD82; }
-
-  .card { @apply bg-dark/80 border border-primary/30 rounded-2xl p-6 shadow-lg text-center; }
-  h1,h2,h3 { text-align:center; }
+body{background-color:#1C1C20;color:#E7E7E7;font-family:'Inter',sans-serif;}
+.card{@apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center;}
+.btn-primary{@apply px-6 py-3 font-semibold rounded-full transition;border:2px solid #E2CD82;color:#E2CD82;background:transparent;position:relative;overflow:hidden;}
+.btn-primary::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(to right,#E2CD82,#1C1C20);transition:0.5s;z-index:0;}
+.btn-primary:hover::after{left:0;}
+.btn-primary span{position:relative; z-index:10;}
+.fade-up{opacity:0; transform:translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease;}
+.fade-up.visible{opacity:1; transform:translateY(0);}
 </style>
 </head>
 <body class="font-sans">
 
+<!-- Header -->
 <header class="bg-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/40">
   <div class="container mx-auto flex justify-between items-center p-4">
     <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
@@ -32,54 +31,35 @@
       <a href="why.html" class="hover:text-primary">Why Us</a>
       <a href="gallery.html" class="hover:text-primary">Gallery</a>
       <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
-      <a href="about.html" class="hover:text-primary">About</a>
       <a href="contact.html" class="hover:text-primary">Contact</a>
     </nav>
   </div>
 </header>
 
+<!-- Hero -->
 <section class="bg-dark text-light py-16 text-center fade-up">
-  <h1 class="text-4xl font-bold text-primary">Our Products & Services</h1>
-  <p class="mt-4 text-lg">High-quality window protection designed for your home or business.</p>
-  <a href="#products" class="inline-block mt-8 btn-primary btn-gold fade-up">Explore Our Products</a>
+  <h1 class="text-4xl font-bold text-primary">Our Products</h1>
 </section>
 
-<main class="container mx-auto py-12 px-6">
-  <h2 class="text-2xl font-bold mb-6 fade-up text-primary">Types of Safety Bars</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="card fade-up">
-      <img src="images/standard-bars.jpg" alt="Standard Bars" class="rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-primary">Standard Safety Bars</h3>
-      <p class="mt-2 text-light/80">Reliable protection for everyday safety.</p>
-    </div>
-    <div class="card fade-up">
-      <img src="images/decorative-bars.jpg" alt="Decorative Bars" class="rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-primary">Decorative Designs</h3>
-      <p class="mt-2 text-light/80">Stylish bars that enhance your home’s aesthetics.</p>
-    </div>
-    <div class="card fade-up">
-      <img src="images/burglar-bars.jpg" alt="Burglar Resistant" class="rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-primary">Burglar-Resistant Bars</h3>
-      <p class="mt-2 text-light/80">Extra-strong bars for maximum security.</p>
-    </div>
+<!-- Installation Services -->
+<main class="container mx-auto py-12 px-6 text-center">
+  <div class="card fade-up">
+    <h2 class="text-2xl font-semibold mb-4 text-primary">Installation Services</h2>
+    <p class="text-light/80 mb-6">Add description here...</p>
+    <a href="contact.html" class="btn-primary"><span>Request Installation</span></a>
   </div>
-
-  <h2 class="text-2xl font-bold mt-12 mb-6 fade-up text-primary">Installation Services</h2>
-  <p class="text-light/80 leading-relaxed fade-up">
-    Professional installation ensures your safety bars are secure and properly fitted. Our experienced team provides fast, reliable service tailored to your needs.
-  </p>
-  <a href="contact.html" class="inline-block mt-8 btn-primary btn-gold fade-up">Request Installation</a>
 </main>
 
-<footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
-  <div class="container mx-auto text-center">
-    <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
-  </div>
+<!-- Footer -->
+<footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16 text-center">
+  <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold:0.2 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {if(entry.isIntersecting) entry.target.classList.add('visible');});
+},{threshold:0.2});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>

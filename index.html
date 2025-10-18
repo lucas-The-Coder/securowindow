@@ -5,37 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SecuroWindow | Secure Your Home</title>
 
-<!-- Tailwind CDN + Custom Colors -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#E2CD82', // gold
-          dark: '#1C1C20',    // charcoal
-          light: '#E7E7E7',   // light gray
-        },
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#E2CD82',
+        dark: '#1C1C20',
+        light: '#E7E7E7',
       },
-    }
-  }
+    },
+  },
+}
 </script>
 
 <style>
-  body { background-color:#1C1C20; color:#E7E7E7; font-family:'Inter',sans-serif; }
+body {
+  background-color: #1C1C20;
+  color: #E7E7E7;
+  font-family: 'Inter', sans-serif;
+}
 
-  .fade-up { opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease; }
-  .fade-up.visible { opacity:1; transform:translateY(0); }
+.fade-up {opacity:0; transform:translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease;}
+.fade-up.visible {opacity:1; transform:translateY(0);}
 
-  .btn-primary { @apply font-semibold px-6 py-3 rounded-2xl shadow transition border-2; }
-  .btn-gold { background-color:#E2CD82; color:#1C1C20; border-color:#1C1C20; }
-  .btn-dark { background-color:#1C1C20; color:#E2CD82; border-color:#E2CD82; }
+.btn-primary {
+  @apply px-6 py-3 font-semibold rounded-full transition;
+  border: 2px solid #E2CD82;
+  color: #E2CD82;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(to right, #E2CD82, #1C1C20);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+.btn-primary:hover::after {left:0;}
+.btn-primary span {position: relative; z-index: 10;}
 
-  .card { @apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center; }
-  h1,h2,h3 { text-align:center; }
+.card {
+  @apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg text-center;
+}
 </style>
 </head>
-
 <body class="font-sans bg-dark text-light">
 
 <!-- Header -->
@@ -48,7 +67,6 @@
       <a href="why.html" class="hover:text-primary">Why Us</a>
       <a href="gallery.html" class="hover:text-primary">Gallery</a>
       <a href="testimonials.html" class="hover:text-primary">Testimonials</a>
-      <a href="about.html" class="hover:text-primary">About</a>
       <a href="contact.html" class="hover:text-primary">Contact</a>
     </nav>
   </div>
@@ -58,7 +76,7 @@
 <section class="bg-primary text-dark py-24 text-center">
   <h1 class="text-5xl font-extrabold fade-up">Add Text Here...</h1>
   <p class="mt-6 text-lg fade-up">Add Text Here...</p>
-  <a href="products.html" class="inline-block mt-8 btn-gold btn-primary fade-up">View Products</a>
+  <a href="products.html" class="btn-primary fade-up mt-8 inline-block"><span>View Products</span></a>
 </section>
 
 <!-- Why Choose Us -->
@@ -85,11 +103,11 @@
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-8 fade-up text-primary">See Our Work</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="card fade-up"><img src="images/gallery1.jpg" alt="Gallery 1" class="rounded-xl"></div>
-      <div class="card fade-up"><img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl"></div>
-      <div class="card fade-up"><img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl"></div>
+      <img src="images/gallery1.jpg" alt="Gallery 1" class="rounded-xl shadow-lg fade-up">
+      <img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl shadow-lg fade-up">
+      <img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl shadow-lg fade-up">
     </div>
-    <a href="gallery.html" class="inline-block mt-10 btn-gold btn-primary fade-up">View Full Gallery</a>
+    <a href="gallery.html" class="btn-primary fade-up mt-10 inline-block"><span>View Full Gallery</span></a>
   </div>
 </section>
 
@@ -97,23 +115,23 @@
 <section class="container mx-auto py-16 px-6 text-center">
   <h2 class="text-3xl font-bold mb-12 fade-up text-primary">What Our Clients Say</h2>
   <div class="grid md:grid-cols-2 gap-8">
-    <div class="card fade-up">
-      <p class="italic text-light/90">“Add Text Here...”</p>
+    <div class="card fade-up text-center">
+      <p class="italic text-light/90 text-lg">“Add Text Here...”</p>
       <p class="mt-4 font-semibold text-primary">– Anonymous</p>
     </div>
-    <div class="card fade-up">
-      <p class="italic text-light/90">“Add Text Here...”</p>
+    <div class="card fade-up text-center">
+      <p class="italic text-light/90 text-lg">“Add Text Here...”</p>
       <p class="mt-4 font-semibold text-primary">– Anonymous</p>
     </div>
   </div>
-  <a href="testimonials.html" class="inline-block mt-10 btn-gold btn-primary fade-up">Read More Reviews</a>
+  <a href="testimonials.html" class="btn-primary fade-up mt-10 inline-block"><span>Read More Reviews</span></a>
 </section>
 
 <!-- CTA -->
 <section class="bg-primary text-dark text-center py-16 px-6">
   <h2 class="text-3xl font-bold fade-up">Ready to Secure Your Windows?</h2>
   <p class="mt-4 text-lg fade-up">Contact us today for a free consultation and quote.</p>
-  <a href="contact.html" class="inline-block mt-8 btn-dark btn-primary fade-up">Get in Touch</a>
+  <a href="contact.html" class="btn-primary fade-up mt-8 inline-block"><span>Get in Touch</span></a>
 </section>
 
 <!-- Footer -->
@@ -124,9 +142,10 @@
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold:0.2 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {if(entry.isIntersecting) entry.target.classList.add('visible');});
+}, {threshold:0.2});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 </script>
-
 </body>
 </html>
