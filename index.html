@@ -40,39 +40,25 @@
 
     /* Capsular buttons */
     .btn {
-      @apply rounded-full font-semibold px-8 py-3 border-2 transition-all duration-300 relative overflow-hidden;
+      @apply relative rounded-full font-semibold px-8 py-3 border-2 overflow-hidden transition-all duration-300;
     }
 
-    .btn-gold-outline {
-      border-color: #E2CD82;
-      color: #E2CD82;
-      background-color: transparent;
+    .btn-dark {
+      @apply border-primary text-primary bg-transparent;
     }
 
-    .btn-dark-outline {
-      border-color: #1C1C20;
-      color: #1C1C20;
-      background-color: transparent;
-    }
-
-    /* Gradient hover effect */
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
+    .btn-dark:hover {
       background: linear-gradient(to right, #E2CD82, #FFD85C);
-      transition: all 0.4s ease;
-      z-index: 0;
+      color: #1C1C20;
     }
-    .btn:hover::before {
-      left: 0;
+
+    .btn-gold {
+      @apply border-dark text-dark bg-primary;
     }
-    .btn span {
-      position: relative;
-      z-index: 10;
+
+    .btn-gold:hover {
+      background: linear-gradient(to right, #1C1C20, #333333);
+      color: #E2CD82;
     }
 
     /* Card style */
@@ -104,7 +90,7 @@
   <section class="bg-primary text-dark py-24 text-center fade-up">
     <h1 class="text-5xl font-extrabold fade-up">Add Text Here...</h1>
     <p class="mt-6 text-lg fade-up">Add Text Here...</p>
-    <a href="products.html" class="btn btn-dark-outline mt-8 inline-block fade-up"><span>View Products</span></a>
+    <a href="products.html" class="btn btn-gold mt-8 inline-block fade-up">View Products</a>
   </section>
 
   <!-- Why Choose Us -->
@@ -135,7 +121,7 @@
         <img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl shadow-lg fade-up">
         <img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl shadow-lg fade-up">
       </div>
-      <a href="gallery.html" class="btn btn-dark-outline inline-block mt-10 fade-up"><span>View Full Gallery</span></a>
+      <a href="gallery.html" class="btn btn-dark mt-10 inline-block fade-up">View Full Gallery</a>
     </div>
   </section>
 
@@ -152,14 +138,14 @@
         <p class="mt-4 font-semibold text-primary">– Anonymous</p>
       </div>
     </div>
-    <a href="testimonials.html" class="btn btn-dark-outline inline-block mt-10 fade-up"><span>Read More Reviews</span></a>
+    <a href="testimonials.html" class="btn btn-dark mt-10 inline-block fade-up">Read More Reviews</a>
   </section>
 
   <!-- CTA -->
   <section class="bg-primary text-dark text-center py-16 px-6">
     <h2 class="text-3xl font-bold fade-up">Ready to Secure Your Windows?</h2>
     <p class="mt-4 text-lg fade-up">Contact us today for a free consultation and quote.</p>
-    <a href="contact.html" class="btn btn-dark-outline mt-8 inline-block fade-up"><span>Get in Touch</span></a>
+    <a href="contact.html" class="btn btn-gold mt-8 inline-block fade-up">Get in Touch</a>
   </section>
 
   <!-- Footer -->
