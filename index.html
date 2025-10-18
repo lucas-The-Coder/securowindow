@@ -46,7 +46,7 @@
     }
 
     .card {
-      @apply bg-dark/80 border border-primary/30 rounded-2xl p-8 shadow-lg;
+      @apply bg-dark/80 border border-primary/40 rounded-2xl p-8 shadow-lg transition transform hover:-translate-y-1 hover:shadow-2xl;
     }
   </style>
 </head>
@@ -99,9 +99,9 @@
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-8 fade-up text-primary">See Our Work</h2>
       <div class="grid md:grid-cols-3 gap-6">
-        <img src="images/gallery1.jpg" alt="Gallery 1" class="rounded-xl shadow-lg fade-up">
-        <img src="images/gallery2.jpg" alt="Gallery 2" class="rounded-xl shadow-lg fade-up">
-        <img src="images/gallery3.jpg" alt="Gallery 3" class="rounded-xl shadow-lg fade-up">
+        <div class="card fade-up"><img src="images/gallery1.jpg" alt="Gallery 1" class="w-full rounded-xl"></div>
+        <div class="card fade-up"><img src="images/gallery2.jpg" alt="Gallery 2" class="w-full rounded-xl"></div>
+        <div class="card fade-up"><img src="images/gallery3.jpg" alt="Gallery 3" class="w-full rounded-xl"></div>
       </div>
       <a href="gallery.html" class="inline-block mt-10 btn-primary fade-up">View Full Gallery</a>
     </div>
