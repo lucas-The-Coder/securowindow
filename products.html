@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Products & Services | SecuroWindow</title>
 
-  <!-- Tailwind CDN with Securowindow light theme -->
+  <!-- Tailwind CDN with Securowindow dark theme -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,8 +13,8 @@
         extend: {
           colors: {
             primary: '#E2CD82', // Gold accent
-            dark: '#1C1C20',    // Charcoal text / dark elements
-            light: '#E7E7E7',   // Light gray background
+            dark: '#1C1C20',    // Dark background
+            light: '#E7E7E7',   // Light text / highlights
           },
         },
       },
@@ -22,22 +22,22 @@
   </script>
 
   <style>
-    /* Light page body */
+    /* Dark page body */
     body {
-      background-color: #E7E7E7; /* Light background */
-      color: #1C1C20;            /* Dark text */
+      background-color: #1C1C20; /* Dark background */
+      color: #E7E7E7;            /* Light text */
       font-family: 'Inter', sans-serif;
     }
 
-    /* Buttons for light pages */
+    /* Buttons for dark pages */
     .btn-primary {
       @apply bg-primary text-dark font-semibold px-6 py-3 rounded-2xl shadow hover:opacity-90 transition;
     }
 
-    /* Cards for light pages */
+    /* Cards for dark pages */
     .card {
-      @apply bg-light/90 border border-dark/30 rounded-2xl p-6 shadow-lg fade-up;
-      color: #1C1C20;
+      @apply bg-dark/90 border border-primary/30 rounded-2xl p-6 shadow-lg fade-up;
+      color: #E7E7E7;
     }
 
     /* Section titles and links */
@@ -45,7 +45,7 @@
       @apply text-primary text-2xl font-bold mb-6;
     }
     .link {
-      @apply text-dark hover:text-primary;
+      @apply text-primary hover:underline;
     }
 
     /* Fade-up animation */
@@ -62,7 +62,7 @@
 </head>
 <body class="font-sans">
   <!-- Header -->
-  <header class="bg-light shadow-md">
+  <header class="bg-dark/95 backdrop-blur-sm border-b border-primary sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
       <nav class="space-x-6">
@@ -78,7 +78,7 @@
   </header>
 
   <!-- Hero Banner -->
-  <section class="bg-light text-dark py-16 text-center fade-up">
+  <section class="bg-dark text-light py-16 text-center fade-up">
     <h1 class="text-4xl font-bold text-primary">Our Products & Services</h1>
     <p class="mt-4 text-lg">High-quality window protection designed for your home or business.</p>
     <a href="#products" class="inline-block mt-8 btn-primary fade-up">Explore Our Products</a>
@@ -110,14 +110,14 @@
 
     <!-- Installation Services -->
     <h2 class="section-title mt-12">Installation Services</h2>
-    <p class="text-dark leading-relaxed">
+    <p class="text-light leading-relaxed">
       Professional installation ensures your safety bars are secure and properly fitted. Our experienced team provides fast, reliable service tailored to your needs.
     </p>
     <a href="contact.html" class="inline-block mt-8 btn-primary fade-up">Request Installation</a>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-light border-t border-dark/30 text-dark py-8 mt-16">
+  <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
     <div class="container mx-auto text-center">
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
     </div>

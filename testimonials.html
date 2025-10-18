@@ -4,47 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Testimonials | SecuroWindow</title>
+
+  <!-- Tailwind CDN with SecuroWindow dark theme -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#E2CD82', // Gold accent
+            dark: '#1C1C20',    // Dark background
+            light: '#E7E7E7',   // Light text
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #1C1C20; /* Dark background */
+      color: #E7E7E7;            /* Light text */
+      font-family: 'Inter', sans-serif;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      @apply bg-dark/90 border border-primary/30 rounded-xl p-6 shadow-lg fade-up;
+    }
+
+    blockquote p {
+      color: #E7E7E7;
+    }
+
+    blockquote footer {
+      color: #E2CD82;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-  <header class="bg-white shadow-md">
+<body class="font-sans">
+
+  <!-- Header -->
+  <header class="bg-dark/95 backdrop-blur-sm border-b border-primary sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="index.html" class="text-2xl font-bold text-blue-600">SecuroWindow</a>
+      <a href="index.html" class="text-2xl font-bold text-primary">SecuroWindow</a>
       <nav class="space-x-6">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="why.html">Why Us</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="testimonials.html" class="text-blue-600 font-semibold">Testimonials</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="hover:text-primary">Home</a>
+        <a href="products.html" class="hover:text-primary">Products</a>
+        <a href="why.html" class="hover:text-primary">Why Us</a>
+        <a href="gallery.html" class="hover:text-primary">Gallery</a>
+        <a href="testimonials.html" class="text-primary font-semibold">Testimonials</a>
+        <a href="about.html" class="hover:text-primary">About</a>
+        <a href="contact.html" class="hover:text-primary">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="bg-blue-600 text-white py-16 text-center">
-    <h1 class="text-4xl font-bold">What Our Customers Say</h1>
+  <!-- Hero Section -->
+  <section class="bg-dark text-light py-16 text-center fade-up">
+    <h1 class="text-4xl font-bold text-primary">What Our Customers Say</h1>
   </section>
 
+  <!-- Testimonials -->
   <main class="container mx-auto py-12 px-6 grid md:grid-cols-2 gap-6">
-    <blockquote class="bg-white p-6 rounded-xl shadow">
-      <p class="text-gray-700">“Add Text Here...”</p>
-      <footer class="mt-4 text-sm text-gray-500">— Add Text Here...</footer>
+    <blockquote class="card">
+      <p>“Add Text Here...”</p>
+      <footer>— Add Text Here...</footer>
     </blockquote>
-    <blockquote class="bg-white p-6 rounded-xl shadow">
-      <p class="text-gray-700">“Add Text Here...”</p>
-      <footer class="mt-4 text-sm text-gray-500">— Add Text Here...</footer>
+    <blockquote class="card">
+      <p>“Add Text Here...”</p>
+      <footer>— Add Text Here...</footer>
     </blockquote>
-    <blockquote class="bg-white p-6 rounded-xl shadow">
-      <p class="text-gray-700">“Add Text Here...”</p>
-      <footer class="mt-4 text-sm text-gray-500">— Add Text Here...</footer>
+    <blockquote class="card">
+      <p>“Add Text Here...”</p>
+      <footer>— Add Text Here...</footer>
     </blockquote>
   </main>
 
-  <footer class="bg-gray-800 text-gray-300 py-8 mt-16">
+  <!-- Footer -->
+  <footer class="bg-dark/95 border-t border-primary/30 text-light py-8 mt-16">
     <div class="container mx-auto text-center">
       <p>&copy; 2025 SecuroWindow. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Fade-up Scroll Animation -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
